@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        .heading {
+            margin: 10px 20px;
+            font-size: 24px;
+        }
+
+        .textmutedSmall {
+            font-size: 12px;
+        }
+
+        .accordian {
+            max-width: 100%;
+        }
+
+        .accordian .contentBX {
+            margin: 10px 20px;
+        }
+
+        .accordian .contentBX .label {
+            color: #ccc;
+            cursor: pointer;
+            padding-left: 35px;
+            line-height: 1.3em;
+        }
+
+        .textLarge {
+            color: #000;
+            font-size: 18px;
+        }
+
+        .accordian .contentBX .icon::before {
+            content: url('./right-arrow.png');
+            position: absolute;
+            margin-top: 5px;
+        }
+
+        .accordian .contentBX.active .icon::before {
+            content: url('./down-arrow.png');
+            position: absolute;
+            margin-top: 5px;
+        }
+
+        .accordian .contentBX .content {
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+            margin-top: 10px;
+            border-bottom: 1px solid;
+        }
+
+        .accordian .contentBX.active .content {
+            height: 70px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            transition: 0.5s;
+
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="heading">
+            Individual reports
+        </div>
+        <div class=accordian>
+            <div class="contentBX">
+                <div>
+                    <div class="icon"> </div>
+                    <div class="label">
+                        <div class='textLarge'>Portfolio reports</div>
+                        <div class='textmutedSmall'> Portfilio valuation, Asset allocation, Portfolio, Portfolio
+                            movement & Transation history cash statement</div>
+                    </div>
+
+                    <div class='content'>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt
+                                utlabore etdolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisiutaliquipex ea commodo consequat.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="contentBX">
+                <div>
+                    <div class="icon"> </div>
+                    <div class="label">
+                        <div class='textLarge'>Income reports</div>
+                        <div class='textmutedSmall'> Income received, Income occured, realised capital gain tax &
+                            Unrealies gains tax</div>
+                    </div>
+
+                    <div class='content'>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            utlabore etdolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisiutaliquipex ea commodo consequat.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            const acc = document.getElementsByClassName("contentBX");
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                })
+            }
+
+        </script>
+    </body>
+
+</html>

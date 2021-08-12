@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .item {
+            width: 176px;
+            height: 219px;
+            margin: 21px 20px 0 0;
+            border-radius: 3px;
+            border: solid 1px #e5e5e5;
+            background-color: #fff;
+            color: #00232b;
+        }
+
+        .item .displaySelected {
+            display: none;
+        }
+
+        .item .displayClosePack {
+            display: none;
+        }
+
+        .item.active {
+            background-color: #00232b;
+            color: #fff;
+        }
+
+        .item.active .displaySelected {
+            display: block;
+            padding: 0 15px 15px;
+            color:#57bdcf;
+
+        }
+
+        .item.active .displayClosePack {
+            display: block;
+            padding: 0 15px 15px;
+            
+        }
+
+        .item.active:hover {
+            background-color: #00232b;
+        }
+
+        .item:hover {
+            box-shadow: 0 40px 45px 0 rgba(0, 0, 0, 0.32);
+            border: solid 1px #e5e5e5;
+            background-color: #fff;
+        }
+
+        .summary-pack {
+            display: flex;
+            padding: 0 15px;
+            font-family: HelveticaNeue;
+            font-size: 18px;
+            line-height: 1.33;
+            height: 133px;
+            align-items: flex-end;
+
+        }
+
+        .item .portfolio-valuation {
+            padding: 15px;
+            border-radius: 3px;
+            background-image: linear-gradient(#0c2b34 27%, #335178);
+            font-family: HelveticaNeue;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.17;
+            color: #fff;
+            display: block;
+        }
+
+        .item.active .portfolio-valuation {
+            display: none;
+        }
+
+        .btnClosePack {
+            width: 100%;
+            text-align: center;
+            color:#fff;
+            padding: 10px;
+            background: #0c2b34;
+            border: 1px solid #57bdcf;
+            border-radius: 4px;
+        }
+        .btnIconColor{
+            color:#57bdcf;
+        }
+    </style>
+    <p>Report packs</p>
+
+    <div class="container">
+        <div class="item">
+            <div class="summary-pack">Summary pack
+                
+            </div>
+            <div class='displaySelected'>selected</div>
+            <div class="portfolio-valuation">
+                Portfolio valuation, Asset allocation, Account performance and Portfolio performance
+            </div>
+            <div class='displayClosePack'>
+                <button class="btnClosePack"> <span class="btnIconColor">X</span> Close pack</button>
+            </div>
+        </div>
+        <div class="item">
+            <div class="summary-pack">Tax pack
+                
+            </div>
+            <div class='displaySelected'>selected</div>
+            <div class="portfolio-valuation">
+                Portfolio valuation, Asset allocation, Account performance and Portfolio performance
+            </div>
+            <div class='displayClosePack'>
+                <button class="btnClosePack"> <span class="btnIconColor">X</span> Close pack</button>
+            </div>
+        </div>
+       
+    </div>
+    <script>
+        const acc = document.getElementsByClassName("item");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+            })
+        }
+
+    </script>
+</body>
+
+</html>
